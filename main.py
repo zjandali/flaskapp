@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return "Hello World"
+    return render_template("templates/index.html")
 
 @app.route('/zain')
 def zain():
-    return render_template("minimal-mistakes/index.html")
+    return render_template("templates/index.html")
 
 
 if __name__ == '__main__':
