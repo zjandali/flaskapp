@@ -44,6 +44,24 @@
         position: relative;
         z-index: 2;
       }
+
+      /* Style for the Projects section buttons */
+      .project-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .project-buttons a {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .project-buttons a:hover {
+        background-color: #0056b3;
+      }
     </style>
   </head>
 
@@ -69,6 +87,9 @@
               <a href="#" data-linkid="1" data-align="right" class="tm-nav-link">About</a>
             </li>
             <li class="tm-nav-item">
+              <a href="#" data-linkid="2" data-align="right" class="tm-nav-link">Projects</a>
+            </li>
+            <li class="tm-nav-item">
               <a href="mailto:yzjandali@berkeley.edu" data-linkid="3" data-align="left" class="tm-nav-link external">Contact</a>
             </li>
             <li class="tm-nav-item">
@@ -86,16 +107,6 @@
                 rel="nofollow" href="img/resume.pdf"
                 class="tm-nav-link external">Resume</a>
             </li>
-            <li class="tm-nav-item">
-              <a
-                rel="nofollow" href="https://zjandali.github.io/Crypto-Dashboard/"
-                class="tm-nav-link external">Crypto Dashboard</a>
-            </li>
-            <li class="tm-nav-item">
-              <a
-                rel="nofollow" href="https://zjandali.github.io/2048-react-app-/"
-                class="tm-nav-link external">My 2048 app</a>
-            </li>
           </ul>
         </nav>
         <header class="tm-site-header-box tm-bg-dark">
@@ -109,6 +120,7 @@
           <div class="col-md-12">
             <!-- Site content -->
             <div class="tm-content">
+              <!-- Introduction Section -->
               <section class="tm-section tm-section-0">
                 <h2 class="tm-section-title mb-3 font-weight-bold">
                   Introduction
@@ -134,6 +146,7 @@ Skills:
                 <a href="#" id="tm_about_link" data-linkid="1" class="tm-link">Read More</a>
               </section>
 
+              <!-- About Me Section -->
               <section class="tm-section tm-section-1">
                 <div class="tm-textbox tm-textbox-2 tm-bg-dark">
                   <h2 class="tm-text-blue mb-4">About Me</h2>
@@ -149,8 +162,23 @@ I’m excited to keep growing as a software engineer and data professional, brin
                 </div>
               </section>
 
-              <!-- Section 3 Contact -->
-              <section class="tm-section tm-section-3 tm-section-left" href="mailto:yzjandali@berkeley.edu">
+              <!-- Projects Section -->
+              <section class="tm-section tm-section-2">
+                <div class="tm-textbox tm-textbox-2 tm-bg-dark">
+                  <h2 class="tm-text-blue mb-4">Projects</h2>
+                  <p class="mb-4">
+                    Here are some of my recent projects:
+                  </p>
+                  <div class="project-buttons">
+                    <a href="https://zjandali.github.io/Crypto-Dashboard/" target="_blank">Crypto Dashboard</a>
+                    <a href="https://zjandali.github.io/2048-react-app-/" target="_blank">My 2048 App</a>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Contact Section -->
+              <section class="tm-section tm-section-3 tm-section-left">
+                <!-- You can add content here if needed -->
               </section>
             </div>
           </div>
@@ -189,6 +217,25 @@ I’m excited to keep growing as a software engineer and data professional, brin
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
+        // Add a particle system
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 5000;
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for (let i = 0; i < particlesCount * 3; i++) {
+          posArray[i] = (Math.random() - 0.5) * 20;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const particlesMaterial = new THREE.PointsMaterial({
+          size: 0.05,
+          color: 0xffffff,
+        });
+
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
         camera.position.z = 5;
 
         // Animation loop
@@ -198,6 +245,9 @@ I’m excited to keep growing as a software engineer and data professional, brin
           // Rotate the cube
           cube.rotation.x += 0.01;
           cube.rotation.y += 0.01;
+
+          // Rotate the particle system
+          particlesMesh.rotation.y += 0.001;
 
           renderer.render(scene, camera);
         }
