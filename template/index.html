@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <link rel="shortcut icon" href="img/b.ico">
@@ -16,9 +16,41 @@
     <link rel="stylesheet" href="slick/slick-theme.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/tooplate-style.css" />
+
+    <style>
+      /* Three.js Background Styles */
+      #threejs-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; /* Set z-index above background images */
+        pointer-events: none;
+      }
+
+      /* Background Images Styles */
+      .cycle-bg-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0; /* Set z-index below three.js canvas */
+      }
+
+      /* Ensure content is above three.js canvas */
+      .tm-main-container {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
   </head>
 
   <body>
+    <!-- Three.js Background Container -->
+    <div id="threejs-background"></div>
+
     <div id="loader-wrapper">
       <div id="loader"></div>
       <div class="loader-section section-left"></div>
@@ -36,36 +68,34 @@
             <li class="tm-nav-item">
               <a href="#" data-linkid="1" data-align="right" class="tm-nav-link">About</a>
             </li>
-
             <li class="tm-nav-item">
-
-              <a href="mailto: yzjandali@berkeley.edu" data-linkid="3" data-align="left" class="tm-nav-link external">Contact</a>
+              <a href="mailto:yzjandali@berkeley.edu" data-linkid="3" data-align="left" class="tm-nav-link external">Contact</a>
             </li>
             <li class="tm-nav-item">
               <a
                 rel="nofollow" href="https://github.com/zjandali"
                 class="tm-nav-link external">REPO</a>
             </li>
-            </li class="tm-nav-item">
+            <li class="tm-nav-item">
               <a
                 rel="nofollow" href="https://github.com/zjandali/website"
                 class="tm-nav-link external">SOURCE CODE</a>
-          </li>
-        </li class="tm-nav-item">
-        <a
-          rel="nofollow" href="img/resume.pdf"
-          class="tm-nav-link external">Resume</a>
-    </li>
-            </li class="tm-nav-item">
+            </li>
+            <li class="tm-nav-item">
+              <a
+                rel="nofollow" href="img/resume.pdf"
+                class="tm-nav-link external">Resume</a>
+            </li>
+            <li class="tm-nav-item">
               <a
                 rel="nofollow" href="https://zjandali.github.io/Crypto-Dashboard/"
                 class="tm-nav-link external">Crypto Dashboard</a>
-          </li>
-            </li class="tm-nav-item">
+            </li>
+            <li class="tm-nav-item">
               <a
                 rel="nofollow" href="https://zjandali.github.io/2048-react-app-/"
                 class="tm-nav-link external">My 2048 app</a>
-          </li>
+            </li>
           </ul>
         </nav>
         <header class="tm-site-header-box tm-bg-dark">
@@ -85,21 +115,21 @@
                 </h2>
                 <div class="tm-textbox tm-bg-dark">
                   <p>
-I recently finished my last semester at UC Berkeley, where I earned my bachelor's degree in Data Science and Computer Science. I have a deep passion for problem-solving and love taking on challenges that allow me to make a real difference. My experience ranges from working with big data and startups to tackling complex, hard-to-crack data sets. I’m skilled in software development and excited to contribute to a company that’s focused on creating a positive impact. I’m always eager to learn and grow, both personally and professionally.      </p>
+I recently finished my last semester at UC Berkeley, where I earned my bachelor's degree in Data Science and Computer Science. I have a deep passion for problem-solving and love taking on challenges that allow me to make a real difference. My experience ranges from working with big data and startups to tackling complex, hard-to-crack data sets. I’m skilled in software development and excited to contribute to a company that’s focused on creating a positive impact. I’m always eager to learn and grow, both personally and professionally.
+                  </p>
                   <p class="mb-0">
-  Skills:
-  <ul>
-    <li><strong>Programming Languages:</strong> Python, Java, JavaScript, HTML/CSS, Bash, Go, R, C#, C/C++, Ruby, PHP, Swift</li>
-    <li><strong>Frameworks:</strong> React.js, Node.js, Vue.js, Django, Flask, SpringBoot, Ruby on Rails, FastAPI, Flutter, ASP.NET Core</li>
-    <li><strong>DevOps and Cloud Technologies:</strong> Docker, Kubernetes, AWS, Azure</li>
-    <li><strong>Databases:</strong> PostgreSQL, MongoDB, Redis, MySQL, Elasticsearch, Weaviate</li>
-    <li><strong>Tools/Platforms:</strong> Git, GitHub, GitLab, Jira, Confluence, Visual Studio Code</li>
-    <li><strong>Data Science/ML:</strong> Pandas, PyTorch, scikit-learn, Keras</li>
-    <li><strong>Testing Frameworks:</strong> JUnit, pytest, Cypress</li>
-    <li><strong>Other Skills:</strong> RESTful APIs, GraphQL, Microservices, Agile (Scrum, Kanban), CI/CD, Unit Testing, TDD, Apache Kafka, RabbitMQ</li>
-  </ul>
-</p>
-
+Skills:
+<ul>
+  <li><strong>Programming Languages:</strong> Python, Java, JavaScript, HTML/CSS, Bash, Go, R, C#, C/C++, Ruby, PHP, Swift</li>
+  <li><strong>Frameworks:</strong> React.js, Node.js, Vue.js, Django, Flask, SpringBoot, Ruby on Rails, FastAPI, Flutter, ASP.NET Core</li>
+  <li><strong>DevOps and Cloud Technologies:</strong> Docker, Kubernetes, AWS, Azure</li>
+  <li><strong>Databases:</strong> PostgreSQL, MongoDB, Redis, MySQL, Elasticsearch, Weaviate</li>
+  <li><strong>Tools/Platforms:</strong> Git, GitHub, GitLab, Jira, Confluence, Visual Studio Code</li>
+  <li><strong>Data Science/ML:</strong> Pandas, PyTorch, scikit-learn, Keras</li>
+  <li><strong>Testing Frameworks:</strong> JUnit, pytest, Cypress</li>
+  <li><strong>Other Skills:</strong> RESTful APIs, GraphQL, Microservices, Agile (Scrum, Kanban), CI/CD, Unit Testing, TDD, Apache Kafka, RabbitMQ</li>
+</ul>
+                  </p>
                 </div>
                 <a href="#" id="tm_about_link" data-linkid="1" class="tm-link">Read More</a>
               </section>
@@ -108,17 +138,16 @@ I recently finished my last semester at UC Berkeley, where I earned my bachelor'
                 <div class="tm-textbox tm-textbox-2 tm-bg-dark">
                   <h2 class="tm-text-blue mb-4">About Me</h2>
                   <p class="mb-4">
-                  </p>
-                  <p class="mb-4">
 I'm passionate about using technology to tackle complex problems. Growing up in Berkeley, I developed a strong curiosity for understanding how systems work and how data can drive impactful decisions. This curiosity led me to pursue a path where software engineering and data analytics come together, allowing me to both code solutions and uncover insights through data.
 
 Throughout my experiences, I’ve worked on a variety of technical projects, from building data-driven tools for startups and nonprofits to managing equipment and IT systems for sports teams. I thrive in roles where creativity meets technical rigor—whether it’s designing intuitive software, managing large datasets, or working cross-functionally to solve operational challenges.
 
-I’m also always exploring new developments in ai, machine learning, cybersecurity, sustainability—fields, and tech in general where I believe technology can make a lasting impact. Outside of work, I enjoy playing and following soccer, traveling, and spending quality time with my friends and family in the Bay Area.
+I’m also always exploring new developments in AI, machine learning, cybersecurity, sustainability—fields where I believe technology can make a lasting impact. Outside of work, I enjoy playing and following soccer, traveling, and spending quality time with my friends and family in the Bay Area.
 
-I’m excited to keep growing as a software engineer and data professional, bringing my unique mix of skills and perspectives to innovative teams. If you’d like to connect, feel free to reach out at yzjandali@berkeley.edu.              </div>
+I’m excited to keep growing as a software engineer and data professional, bringing my unique mix of skills and perspectives to innovative teams. If you’d like to connect, feel free to reach out at yzjandali@berkeley.edu.
+                  </p>
+                </div>
               </section>
-
 
               <!-- Section 3 Contact -->
               <section class="tm-section tm-section-3 tm-section-left" href="mailto:yzjandali@berkeley.edu">
@@ -127,16 +156,64 @@ I’m excited to keep growing as a software engineer and data professional, brin
           </div>
         </div>
       </div>
-
-
-      </div>
     </div>
 
+    <!-- Scripts -->
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/background.cycle.js"></script>
     <script src="slick/slick.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
 
+    <!-- Include Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Three.js Initialization Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Set up scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(
+          75, window.innerWidth / window.innerHeight, 0.1, 1000
+        );
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setClearColor(0x000000, 0); // Set clear color to transparent
+
+        // Append renderer to the container
+        document.getElementById('threejs-background').appendChild(renderer.domElement);
+
+        // Add a rotating cube
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshNormalMaterial();
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        camera.position.z = 5;
+
+        // Animation loop
+        function animate() {
+          requestAnimationFrame(animate);
+
+          // Rotate the cube
+          cube.rotation.x += 0.01;
+          cube.rotation.y += 0.01;
+
+          renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', onWindowResize, false);
+        function onWindowResize(){
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+      });
+    </script>
+
+    <!-- Existing Initialization Scripts -->
     <script>
       let slickInitDone = false;
       let previousImageId = 0,
@@ -188,7 +265,6 @@ I’m excited to keep growing as a software engineer and data professional, brin
         $(".tm-section-0").fadeIn();
 
         // Set Background images
-        // https://www.jqueryscript.net/slideshow/Simple-jQuery-Background-Image-Slideshow-with-Fade-Transitions-Background-Cycle.html
         bgCycle = $("body").backgroundCycle({
           imageUrls: [
             "img/albert.jpg",
@@ -307,13 +383,13 @@ I’m excited to keep growing as a software engineer and data professional, brin
       $(document).ready(function () {
         var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
         if (window.location.hash && isChrome) {
-        setTimeout(function () {
+          setTimeout(function () {
             var hash = window.location.hash;
             window.location.hash = "";
             window.location.hash = hash;
-        }, 300);
-      }
-    });
+          }, 300);
+        }
+      });
     </script>
   </body>
 </html>
