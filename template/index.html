@@ -62,6 +62,21 @@
       .project-buttons a:hover {
         background-color: #0056b3;
       }
+
+      /* Style for the button in About Me section */
+      .about-button {
+        margin-top: 20px;
+      }
+      .about-button a {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .about-button a:hover {
+        background-color: #218838;
+      }
     </style>
   </head>
 
@@ -159,6 +174,11 @@ I’m also always exploring new developments in AI, machine learning, cybersecur
 
 I’m excited to keep growing as a software engineer and data professional, bringing my unique mix of skills and perspectives to innovative teams. If you’d like to connect, feel free to reach out at yzjandali@berkeley.edu.
                   </p>
+
+                  <!-- Button to navigate to Projects page -->
+                  <div class="about-button">
+                    <a href="#" data-linkid="2" class="tm-link tm-projects-link">View My Projects</a>
+                  </div>
                 </div>
               </section>
 
@@ -339,6 +359,7 @@ I’m excited to keep growing as a software engineer and data professional, brin
 
         $("#tm_about_link").on("click", navLinkClick);
         $("#tm_work_link").on("click", navLinkClick);
+        $(".tm-projects-link").on("click", navLinkClick); // Added for About Me button
 
         // Each menu item click
         eachNavLink.on("click", navLinkClick);
