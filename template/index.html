@@ -48,23 +48,44 @@
       /* Style for the Projects section buttons */
       .project-buttons {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px; /* Adds spacing between buttons */
-        max-width: 300px; /* Optional: Limits the width of the container */
+        flex-wrap: wrap;
+        gap: 15px;
+        max-width: 100%;
+      }
+      .project-buttons .non-ui-section,
+      .project-buttons .ui-section {
+        flex: 1;
+        min-width: 200px;
+      }
+      .project-buttons h3 {
+        width: 100%;
+        margin-bottom: 10px;
       }
       .project-buttons a {
-        margin: 0; /* Remove redundant margin */
+        display: inline-block;
+        margin: 0 0 10px 0;
         padding: 10px 20px;
         background-color: #007bff;
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add slight shadow for better separation */
-        width: 100%; /* Ensures buttons take full width of the container */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        width: auto;
+        text-align: center;
       }
       .project-buttons a:hover {
         background-color: #0056b3;
+      }
+
+      /* Media query for smaller screens */
+      @media (max-width: 768px) {
+        .project-buttons {
+          flex-direction: column;
+        }
+        .project-buttons .non-ui-section,
+        .project-buttons .ui-section {
+          width: 100%;
+        }
       }
 
       /* Style for the button in About Me section */
@@ -109,7 +130,7 @@
               <a href="#" data-linkid="2" data-align="right" class="tm-nav-link">Projects</a>
             </li>
             <li class="tm-nav-item">
-              <a href="mailto:yzjandali@berkeley.edu" data-linkid="3" data-align="left" class="tm-nav-link external">Contact</a>
+              <a href="/cdn-cgi/l/email-protection#443d3e2e252a2025282d042621362f2128213d6a212031" data-linkid="3" data-align="left" class="tm-nav-link external">Contact</a>
             </li>
             <li class="tm-nav-item">
               <a
@@ -173,7 +194,7 @@ Skills:
                        <li><strong>Thrives in roles combining creativity, adaptability, and technical rigor📐</strong></li>
                        <li><strong>Interested in developments in AI, cybersecurity, and sustainability👨‍💻</strong></li> 
                        <li><strong>Enjoys soccer⚽, traveling🧭, and spending time with friends and family in the Bay Area🌉</strong></li>
-                        <li><strong>Open to connections and opportunities: yzjandali@berkeley.edu😎🤝</strong></li>
+                        <li><strong>Open to connections and opportunities: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e990938388878d888580a98b8c9b828c858c90c78c8d9c">[email&#160;protected]</a>😎🤝</strong></li>
 </ul>
 
                   <!-- Button to navigate to Projects page -->
@@ -191,30 +212,30 @@ Skills:
                     Here are some of my recent projects:
                   </p>
                   <div class="project-buttons">
-   
-    <!-- Non-UI Section -->
-    <div class="non-ui-section">
-        <h3>Non-UI Projects</h3>
-        <a href="https://github.com/zjandali/NeurAI_Explorer" target="_blank">NeurAI-Explorer</a>
-        <a href="https://github.com/zjandali/VisionMate" target="_blank">VisionMate</a>
-        <a href="https://github.com/zjandali/benchmark" target="_blank">LLM Benchmark</a>
-        <a href="https://github.com/zjandali/search" target="_blank">AI Academic Search</a>
-        <a href="https://github.com/zjandali/website" target="_blank">Website Source Code</a>
-    </div>
+                    <!-- Non-UI Section -->
+                    <div class="non-ui-section">
+                      <h3>Non-UI Projects</h3>
+                      <a href="https://github.com/zjandali/NeurAI_Explorer" target="_blank">NeurAI-Explorer</a>
+                      <a href="https://github.com/zjandali/VisionMate" target="_blank">VisionMate</a>
+                      <a href="https://github.com/zjandali/benchmark" target="_blank">LLM Benchmark</a>
+                      <a href="https://github.com/zjandali/search" target="_blank">AI Academic Search</a>
+                      <a href="https://github.com/zjandali/website" target="_blank">Website Source Code</a>
+                    </div>
 
-    <!-- UI Section -->
-    <div class="ui-section">
-        <h3>UI Projects</h3>
-        <a href="https://zain-jandali-receipt-generator.netlify.app/" target="_blank">Receipt Generator</a>
-        <a href="https://lucky-entremet-fbc641.netlify.app/" target="_blank">My Postman</a>
-        <a href="https://zjandali.github.io/2048-react-app-/" target="_blank">My 2048 App</a>
-        <a href="https://zjandali.github.io/Crypto-Dashboard/" target="_blank">Crypto Dashboard</a>
-        <a href="https://task-manager-9.vercel.app/" target="_blank">Task Manager</a>
-        <a href="https://fireworks-app-two.vercel.app/" target="_blank">Fireworks</a>
-        <a href="https://tarot-card-reader-one.vercel.app/" target="_blank">Tarot Card Reader</a>
-        <a href="https://planets-gold.vercel.app/" target="_blank">Planets</a>
-    </div>
-</div>
+                    <!-- UI Section -->
+                    <div class="ui-section">
+                      <h3>UI Projects</h3>
+                      <a href="https://zain-jandali-receipt-generator.netlify.app/" target="_blank">Receipt Generator</a>
+                      <a href="https://lucky-entremet-fbc641.netlify.app/" target="_blank">My Postman</a>
+                      <a href="https://zjandali.github.io/2048-react-app-/" target="_blank">My 2048 App</a>
+                      <a href="https://zjandali.github.io/Crypto-Dashboard/" target="_blank">Crypto Dashboard</a>
+                      <a href="https://task-manager-9.vercel.app/" target="_blank">Task Manager</a>
+                      <a href="https://fireworks-app-two.vercel.app/" target="_blank">Fireworks</a>
+                      <a href="https://tarot-card-reader-one.vercel.app/" target="_blank">Tarot Card Reader</a>
+                      <a href="https://planets-gold.vercel.app/" target="_blank">Planets</a>
+                    </div>
+                  </div>
+                </div>
               </section>
 
               <!-- Contact Section -->
@@ -228,7 +249,7 @@ Skills:
     </div>
 
     <!-- Scripts -->
-    <script src="js/jquery-1.11.0.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/background.cycle.js"></script>
     <script src="slick/slick.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
