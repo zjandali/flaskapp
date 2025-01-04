@@ -29,6 +29,34 @@
         pointer-events: none;
       }
 
+      .github-section .image-container {
+  /* Make the container bigger */
+  width: 600px;
+  height: 220px;
+
+  /* Keep overflow hidden to maintain the crop */
+  overflow: hidden;
+  
+  /* Center the container horizontally */
+  margin: 0 auto;
+  position: relative;
+}
+
+.github-section .image-container img {
+  /* Keep the same horizontal shift so the crop stays the same */
+  transform: translateX(-70%);
+  cursor: pointer;
+
+  /* Smooth animation on hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.github-section .image-container img:hover {
+  /* Slightly enlarge and add a highlight (box-shadow) */
+  transform: translateX(-70%) scale(1.05);
+  box-shadow: 0 0 15px #007bff;
+}
+
       /* Background Images Styles */
       .cycle-bg-image {
         position: fixed;
@@ -205,9 +233,7 @@ Skills:
               <section class="tm-section tm-section-2">
                 <div class="tm-textbox tm-textbox-2 tm-bg-dark">
                   <h2 class="tm-text-blue mb-4">Projects</h2>
-                  <p class="mb-4">
-                    Here are some of my recent projects:
-                  </p>
+                  <p class="mb-4">Here are some of my recent projects:</p>
                   <div class="project-buttons">
                     
                     <!-- Non-UI Section -->
@@ -219,10 +245,11 @@ Skills:
                       <a href="https://github.com/zjandali/search" target="_blank">AI Academic Search</a>
                       <a href="https://github.com/zjandali/website" target="_blank">Website Source Code</a>
                     </div>
-
+              
                     <!-- UI Section -->
                     <div class="ui-section">
                       <h3>Projects With UI</h3>
+                      <a href="https://tripsy-rbv5.vercel.app/" target="_blank">Tripsy (Travel App currently in development)</a>
                       <a href="https://zain-jandali-receipt-generator.netlify.app/" target="_blank">Receipt Generator</a>
                       <a href="https://lucky-entremet-fbc641.netlify.app/" target="_blank">My Postman</a>
                       <a href="https://zjandali.github.io/2048-react-app-/" target="_blank">My 2048 App</a>
@@ -232,9 +259,26 @@ Skills:
                       <a href="https://tarot-card-reader-one.vercel.app/" target="_blank">Tarot Card Reader</a>
                       <a href="https://planets-gold.vercel.app/" target="_blank">Planets</a>
                     </div>
+
+                    <div class="github-section">
+                      <h3>GitHub</h3>
+                      <div class="centered-items">
+                        <div class="image-container">
+                          <img 
+                            src="https://ghchart.rshah.org/007bff/zjandali" 
+                            alt="GitHub Contribution Chart"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
                   </div>
+              
+                 
                 </div>
               </section>
+              
 
               <!-- Contact Section -->
               <section class="tm-section tm-section-3 tm-section-left">
